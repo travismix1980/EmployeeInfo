@@ -13,5 +13,40 @@ namespace EmployeeInfo
         {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LblResult.Text = DropDownList1.Text;
+        }
+
+        protected void BtnGo_Click(object sender, EventArgs e)
+        {
+            LblFullResult.Text = $"{TxtName.Text} {LblResult.Text}";
+            if (RdoMarketing.Checked)
+            {
+                LblFullResult.Text += " Marketing";
+            }
+            else if (RdoAccounting.Checked)
+            {
+                LblFullResult.Text += " Accounting";
+            }
+            else if (RdoLegal.Checked)
+            {
+                LblFullResult.Text += " Legal";
+            }
+
+            if(ChkBA.Checked)
+            {
+                LblFullResult.Text += " BA";
+            }
+            if (ChkMA.Checked)
+            {
+                LblFullResult.Text += " MA";
+            }
+            if (ChkPHD.Checked)
+            {
+                LblFullResult.Text += " PHD";
+            }
+        }
     }
 }
